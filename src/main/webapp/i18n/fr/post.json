@@ -1,0 +1,22 @@
+{
+    "cmsApp": {
+        "post" : {
+            "home": {
+                "title": "Posts",
+                "createLabel": "Créer un nouveau Post",
+                "createOrEditLabel": "Créer ou éditer un Post"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Post {{ id }} ?"
+            },
+            "detail": {
+                "title": "Post"
+            },
+            "title": "Title",
+            "content": "Content",
+            "author": "author",
+            "category": "category"
+        }
+    }
+}
+

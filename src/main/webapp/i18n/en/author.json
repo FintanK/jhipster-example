@@ -1,0 +1,19 @@
+{
+    "cmsApp": {
+        "author" : {
+            "home": {
+                "title": "Authors",
+                "createLabel": "Create a new Author",
+                "createOrEditLabel": "Create or edit a Author"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Author {{ id }}?"
+            },
+            "detail": {
+                "title": "Author"
+            },
+            "name": "Name",
+            "bio": "Bio"
+        }
+    }
+}

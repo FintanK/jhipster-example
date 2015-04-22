@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="cmsApp.post.detail.title">Post</span> {{post.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="cmsApp.post.title">Title</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{post.title}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cmsApp.post.content">Content</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{post.content}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cmsApp.post.author">author</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{post.author.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="cmsApp.post.category">category</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{post.category.name}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="post"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

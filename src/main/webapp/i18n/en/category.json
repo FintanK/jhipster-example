@@ -1,0 +1,18 @@
+{
+    "cmsApp": {
+        "category" : {
+            "home": {
+                "title": "Categorys",
+                "createLabel": "Create a new Category",
+                "createOrEditLabel": "Create or edit a Category"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "name": "Name"
+        }
+    }
+}

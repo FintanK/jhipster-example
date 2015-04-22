@@ -1,0 +1,148 @@
+<div>
+
+    <h2 translate="cmsApp.post.home.title">Post</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#savePostModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="cmsApp.post.home.createLabel">Create a new Post</span>
+    </button>
+    <div class="modal fade" id="savePostModal" tabindex="-1" role="dialog" aria-labelledby="myPostLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myPostLabel" translate="cmsApp.post.home.createOrEditLabel">Create or edit a Post</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="post.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cmsApp.post.title">Title</label>
+                            <input type="text" class="form-control" name="title"
+                                   ng-model="post.title" required>
+
+                            <div ng-show="editForm.title.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.title.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="cmsApp.post.content">Content</label>
+                            <input type="text" class="form-control" name="content"
+                                   ng-model="post.content" required>
+
+                            <div ng-show="editForm.content.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.content.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="cmsApp.post.author">author</label>
+                            <select class="form-control" name="author" ng-model="post.author.id" ng-options="author.id as author.name for author in authors">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="cmsApp.post.category">category</label>
+                            <select class="form-control" name="category" ng-model="post.category.id" ng-options="category.id as category.name for category in categorys">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePostConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(post.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="cmsApp.post.delete.question" translate-values="{id: '{{post.id}}'}">Are you sure you want to delete this Post?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="cmsApp.post.title">Title</th>
+                    <th translate="cmsApp.post.content">Content</th>
+                    <th translate="cmsApp.post.author">author</th>
+                    <th translate="cmsApp.post.category">category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="post in posts">
+                    <td><a ui-sref="postDetail({id:post.id})">{{post.id}}</a></td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.content}}</td>
+                    <td>{{post.author.name}}</td>
+                    <td>{{post.category.name}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="postDetail({id:post.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(post.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(post.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

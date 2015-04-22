@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "cms",
+    "packageName": "com.cms",
+    "packageFolder": "com/cms",
+    "authenticationType": "xauth",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "rememberMeKey": "bb0fe72591e9b916c893701a4de648ccfde161d1"
+  }
+}
