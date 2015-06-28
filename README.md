@@ -39,19 +39,16 @@ Installation
 Make sure you have JAVA 8 installed.
 Navigate to the root directory.
 
-Install NPM dependencies
+> mvn clean install
 
-> npm install
-
-Install frontend dependencies wit bower
-
-> bower install
+This should take care of the dependencies for both the front and backend components.
 
 
 Usage
 ==========================
 
 Build and run the project
+
 > mvn spring-boot:run
 
 Run the frontend in development mode
