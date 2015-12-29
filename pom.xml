@@ -9,12 +9,12 @@
         <relativePath />
     </parent>
 
-    <groupId>com.cms</groupId>
-    <artifactId>cms</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>cms</name>
+    <name>example</name>
 
     <prerequisites>
         <maven>3.0.0</maven>
@@ -543,11 +543,11 @@
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                     <driver>com.mysql.jdbc.Driver</driver>
-                    <url>jdbc:mysql://localhost:3306/cms</url>
-                    <defaultSchemaName>cms</defaultSchemaName>
+                    <url>jdbc:mysql://localhost:3306/example</url>
+                    <defaultSchemaName>example</defaultSchemaName>
                     <username>root</username>
                     <password />
-                    <referenceUrl>hibernate:spring:com.cms.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
+                    <referenceUrl>hibernate:spring:com.example.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>
