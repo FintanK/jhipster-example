@@ -4,6 +4,8 @@ Jhipster Example
 This is a simple example of a full stack application built using JHipster.
 It create entities for authors, categories and posts.
 
+![](http://jeffsheets.github.io/BuzzworthyJava/assets/img/hipster-logo.png)
+
 
 Components
 ==========================
