@@ -1,4 +1,8 @@
-language: java
+language: 
+  - java
+  - node_js
+node_js: 
+  - "4.4.1" 
 jdk:
   - oraclejdk8
 before_install:
