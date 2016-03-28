@@ -6,6 +6,7 @@ node_js:
 jdk:
   - oraclejdk8
 before_install:
+  - npm install -g npm
   - npm install -g bower
   - npm install -g grunt-cli  
 install:
