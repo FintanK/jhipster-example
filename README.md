@@ -1,4 +1,4 @@
-Jhipster Example
+Jhipster Example [![Build Status](https://travis-ci.org/FintanK/jhipster-example.svg?branch=master)](https://travis-ci.org/FintanK/jhipster-example)
 ==========================
 
 This is a simple example of a full stack application built using JHipster.
