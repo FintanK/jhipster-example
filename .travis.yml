@@ -1,5 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
+before_install:
+  - npm install -g bower
+  - npm install -g grunt-cli  
 install:
   - mvn install
